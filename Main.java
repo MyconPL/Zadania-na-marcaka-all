@@ -1,34 +1,21 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Podaj pierwszą liczbę: ");
-        double num1 = scanner.nextDouble();
-
-        System.out.print("Podaj drugą liczbę: ");
-        double num2 = scanner.nextDouble();
-
-        System.out.print("Podaj trzecią liczbę: ");
-        double num3 = scanner.nextDouble();
-
-        double suma = num1 + num2 + num3;
-        System.out.println("Suma: " + suma);
-
-        double roznica = num1 - num2 - num3;
-        System.out.println("Różnica: " + roznica);
-
-        double iloczyn = num1 * num2 * num3;
-        System.out.println("Iloczyn: " + iloczyn);
-
-        if (num2 != 0 && num3 != 0) {
-            double iloraz = num1 / num2 / num3;
-            System.out.println("Iloraz: " + iloraz);
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Podaj liczbe: ");
+        int liczba = scanner.nextInt();
+        boolean warunekAND = (liczba % 2 == 0) && (liczba > 10);
+        boolean warunekOR = (liczba % 2 != 0) || (liczba <= 5);
+        System.out.println("Czy liczba jest parzysta i wieksza od 10? " + warunekAND);
+        System.out.println("Czy liczba jest nieparzysta lub niewiększa od 5? " + warunekOR);
+        System.out.println("Podaj litere: ");
+        int litera = scanner.next().charAt(0);
+        if (Character.isUpperCase(litera)) {
+            System.out.println("Litera jest duza");
+        } else if (Character.isLowerCase(litera)) {
+            System.out.println("Litera jest mala");
         } else {
-            System.out.println("Nie można dzielić przez zero!");
+            System.out.println("To nie jest litera");
         }
-
-        scanner.close();
     }
 }
